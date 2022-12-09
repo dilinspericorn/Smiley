@@ -3,16 +3,11 @@ import Emoji from './Emoji';
 
 export class DisplayEmoji extends Component {
   render() {
-    console.log(this.props.input);
-    // let filter=Emoji.filter((data)=>console.log(data.keywords.split(" ").includes(this.props.input)))
-
     let Emojis =
-      this.props.input === null
+      this.props.input === null || this.props.input === ''
         ? Emoji
         : Emoji.filter((data) =>
-            // console.log(data.keywords.split(' ').includes(this.props.input))
             data.keywords.split(' ').includes(this.props.input.toLowerCase())
-
           );
     Emojis = Emojis.map((data, index) => {
       return (
@@ -22,7 +17,7 @@ export class DisplayEmoji extends Component {
       );
     });
 
-    return <div>{Emojis}</div>;
+    return <div className="emojis">{Emojis}</div>;
   }
 }
 

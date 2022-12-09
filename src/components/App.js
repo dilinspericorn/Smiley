@@ -15,7 +15,7 @@ export class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='container'>
         <SearchBar onSubmit={this.onSubmit} />
         <DisplayEmoji input={this.state.input}/>
       </div>
